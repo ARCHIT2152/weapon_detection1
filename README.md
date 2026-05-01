@@ -445,5 +445,6 @@ Below are the key metrics from `results.csv` showing model progression:
 - **NVIDIA** for CUDA acceleration infrastructure
 
 ---
+<img width="794" height="699" alt="Screenshot 2026-04-27 172619" src="https://github.com/user-attachments/assets/c0cfa983-3e4d-43b0-a6d2-7025b851a9b8" />
 
 *Model trained on NVIDIA GeForce RTX 4050 · CUDA 12.1 · Python 3.11 · Ultralytics YOLOv8m*
