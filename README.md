@@ -21,7 +21,6 @@
 12. [Dataset Statistics](#12-dataset-statistics)
 13. [Training History](#13-training-history)
 14. [Future Scope](#14-future-scope)
-15. [Troubleshooting](#15-troubleshooting)
 
 ---
 
