@@ -1,21 +1,21 @@
 from ultralytics import YOLO
 
 def main():
-    # Load a pre-trained model as a starting point (Medium model for higher accuracy)
+    
     model = YOLO("yolov8m.pt") 
 
     print("Starting training on weapon detection dataset...")
     
-    # Train the model using our custom dataset
+    
     results = model.train(
         data="weapon detection.v1i.yolov8 (1)/data.yaml",
-        epochs=150,                  # Increased epochs for maximum learning
-        imgsz=640,                  # Image size
-        batch=16,                   # Batch size
+        epochs=150,                  
+        imgsz=640,                  
+        batch=16,                   
         name="weapon_detection_model",
-        device="0",               # Use "cpu" for laptop, change to "0" if you have an Nvidia GPU
-        patience=25,                # Early stopping parameter (stops if no improvement for 25 epochs)
-        save=True,                 # Save weights
+        device="0",               
+        patience=25,                
+        save=True,                 
         cache  = True,
         workers = 4
 
