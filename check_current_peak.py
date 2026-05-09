@@ -2,7 +2,7 @@ import pandas as pd
 import os
 
 try:
-    # Load the live results.csv file from the current training run
+    
     csv_path = "runs/detect/weapon_detection_model7/results.csv"
     
     if not os.path.exists(csv_path):
@@ -11,22 +11,22 @@ try:
 
     df = pd.read_csv(csv_path)
     
-    # Strip whitespace from column names just in case
+    
     df.columns = df.columns.str.strip()
     
-    # Extract the epoch number and the mAP50-95 score
+    
     epochs = df['epoch'].tolist()
     map_scores = df['metrics/mAP50-95(B)'].tolist()
     
-    # Find the peak
+    
     peak_score = max(map_scores)
-    peak_epoch = map_scores.index(peak_score) + 1 # +1 because epochs usually start at 1
+    peak_epoch = map_scores.index(peak_score) + 1 
     current_epoch = len(epochs)
     
     epochs_since_peak = current_epoch - peak_epoch
     
     print("\n" + "="*50)
-    print("🧠 LIVE TRAINING PEAK ANALYSIS 🧠")
+    print(" LIVE TRAINING PEAK ANALYSIS ")
     print("="*50)
     print(f"Current Epoch: {current_epoch} / 150")
     print(f"Highest mAP Score Achieved: {peak_score:.4f}")
@@ -34,10 +34,10 @@ try:
     print("-" * 50)
     
     if epochs_since_peak == 0:
-        print("🔥 Your AI is currently at its absolute smartest point right now! It just peaked.")
+        print(" Your AI is currently at its absolute smartest point right now! It just peaked.")
     else:
-        print(f"⏳ It has been {epochs_since_peak} epochs since the AI last peaked.")
-        print(f"🛑 If this number reaches 25, the patience trigger will abort the training.")
+        print(f" It has been {epochs_since_peak} epochs since the AI last peaked.")
+        print(f" If this number reaches 25, the patience trigger will abort the training.")
         
     print("="*50 + "\n")
 
